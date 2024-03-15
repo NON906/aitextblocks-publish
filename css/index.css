@@ -1,0 +1,57 @@
+#item_template {
+    display: none;
+}
+
+.item {
+    margin: 5px;
+    padding: 5px;
+}
+
+.item_title {
+    width: 80%;
+}
+
+.item_content {
+    resize: none;
+    width: 95%;
+}
+
+.item_instruction_content {
+    display: none;
+    width: 95%;
+}
+
+#target_instruction_content {
+    display: none;
+    width: 95%;
+}
+
+#conversation_template{
+    display: none;
+}
+
+.conversation {
+    margin: 5px;
+    padding: 5px;
+}
+
+.conversation_main {
+    display: none;
+}
+
+.conversation_human {
+    background-color: #D0E0E5;
+}
+
+.conversation_input {
+    resize: none;
+    width: 95%;
+}
+
+.conversation_chat {
+    width: 100px;
+}
+
+#api_url_parent {
+    display: none;
+}

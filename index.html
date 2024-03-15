@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>AITextBlocks</title>
+</head>
+<script src="dist/main.js"></script>
+<link href="css/index.css" rel="stylesheet" />
+<body>
+    <div id="api_selector">
+        <select id="api_selector_api">
+            <option>Google AI Studio</option>
+            <option>OpenAI API</option>
+            <option>Other (OpenAI API compatible)</option>
+        </select>
+        <span id="api_key_and_model_parent">
+            <nobr>&nbsp;&nbsp;API Key: <input type="password" id="api_key" /></nobr>
+            <nobr>&nbsp;&nbsp;Model Name: <input type="text" id="api_model_name" /></nobr>
+        </span>
+        <span id="api_harm_parent">
+            <nobr>
+                &nbsp;&nbsp;Harm Block: 
+                <select id="api_harm">
+                    <option>High</option>
+                    <option selected>Medium</option>
+                    <option>Low</option>
+                    <option>None</option>
+                </select>
+            </nobr>
+        </span>
+        <span id="api_url_parent">
+            <nobr>&nbsp;&nbsp;URL: <input type="text" id="api_url" /></nobr>
+        </span>
+    </div>
+    <div id="save_and_load">
+        <div style="float:left;">
+            <input type="text" name="" list="save_and_load_selector" placeholder="" autocomplete="off" id="save_and_load_selector_input">
+            <datalist id="save_and_load_selector">
+            </datalist>
+            <button id="save_and_load_load">Load</button>
+            <button id="save_and_load_save">Save</button>
+            <button id="save_and_load_delete">Delete</button>
+            <nobr>
+                <select id="save_and_load_export_type">
+                    <option>JSON</option>
+                    <option>MarkDown</option>
+                </select>
+                <button id="save_and_load_export">Export</button>
+                <nobr>&nbsp;&nbsp;Import JSON: <input type="file" id="save_and_load_import" /></nobr>
+            </nobr>
+        </div>
+        <div style="float:right;">
+            <button id="target_instruction_undo" disabled>Undo</button>
+            <button id="target_instruction_redo" disabled>Redo</button>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <div id="items">
+        <div id="item_template" class="item">
+            Title: <input type="text" class="item_title" />
+            <textarea class="item_content"></textarea>
+            <div style="float:left;">
+                <input type="checkbox" class="item_target">Target</input>
+                <input type="checkbox" class="item_ignore">Ignore</input>
+            </div>
+            <div style="float:right;">
+                <button class="item_generate">Generate</button>
+                <nobr>
+                    <select class="item_instruction_mode">
+                        <option>Update</option>
+                        <option>Correction</option>
+                        <option>Summarize</option>
+                        <option>Other...</option>
+                    </select>
+                    <button class="item_instruction_exec">Exec</button>
+                </nobr>
+                <button class="item_up">Up</button>
+                <button class="item_down">Down</button>
+                <button class="item_delete">Delete</button>
+            </div>
+            <div style="clear:both;"></div>
+            <div>
+                <input type="text" class="item_instruction_content" />
+            </div>
+        </div>
+        <div id="conversation_template" class="conversation">
+            Title: <input type="text" class="item_title" />
+            <div class="conversation_main">
+                <div class="conversation_human">Test Human Message.</div>
+                <div class="conversation_ai">Test AI Message.</div>
+            </div>
+            <div class="conversation_display">
+                <div class="conversation_human">Test Human Message.</div>
+                <div class="conversation_ai">Test AI Message.</div>
+            </div>
+            <textarea class="conversation_input"></textarea>
+            <div style="float:left;">
+                <span style="visibility:hidden;"><input type="checkbox">Target</input></span>
+                <input type="checkbox" class="item_ignore">Ignore</input>
+            </div>
+            <div style="float:right;">
+                <button class="conversation_chat">Chat</button>
+                <button class="conversation_remove_last">Remove Last</button>
+                <button class="item_up">Up</button>
+                <button class="item_down">Down</button>
+                <button class="item_delete">Delete</button>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    <div id="target_instruction">
+        <div style="float:left;">
+            <input type="checkbox" id="target_instruction_check_all">Check All</input>
+        </div>
+        <div style="float:right;">
+            <nobr>
+                <select id="target_instruction_mode">
+                    <option>Update</option>
+                    <option>Correction</option>
+                    <option>Summarize</option>
+                    <option>Other...</option>
+                </select>
+                <button id="target_instruction_exec">Exec</button>
+            </nobr>
+            <button id="target_instruction_add">+ Add Item</button>
+            <button id="target_instruction_add_conversation">+ Add Conversation</button>
+        </div>
+        <div style="clear:both;"></div>
+        <div>
+            <input type="text" id="target_instruction_content" />
+        </div>
+    </div>
+    <div>
+        <button id="abort_btn" disabled>Abort</button>
+    </div>
+</body>
+</html>
