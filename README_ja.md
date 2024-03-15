@@ -1,6 +1,7 @@
 # AITextBlocks
 
-LLM（文章生成AI）で文章生成・添削・要約などを行うことが出来るツールです。
+LLM（文章生成AI）で文章生成・添削・要約などを行うことが出来るツールです。  
+[こちらで公開しています](https://non906.github.io/aitextblocks-publish/)。
 
 ## 準備
 
